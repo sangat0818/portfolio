@@ -1,6 +1,6 @@
 # Paban Kumar Adhikari — Portfolio
 
-Personal portfolio site for educator, trainer, and facilitator Paban Kumar Adhikari.
+Personal portfolio site built with Next.js.
 
 ## Develop
 
@@ -9,6 +9,8 @@ npm install
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000).
+
 ## Build
 
 ```bash
@@ -16,4 +18,8 @@ npm run build
 npm start
 ```
 
-Requires Node.js `>=22.13.0`.
+## Deploy
+
+Push to GitHub and deploy with [Vercel](https://vercel.com) (or any Next.js host).
+
+Requires Node.js 20+.
