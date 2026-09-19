@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Hello World",
-  description: "A creative developer portfolio.",
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: `${profile.name} | Educator, Trainer & Facilitator`,
+    template: `%s | ${profile.name}`,
+  },
+  description: profile.introduction,
+  keywords: ["educator", "trainer", "facilitator", "NGO trainer", "education consultant", "workshop facilitator", "teacher trainer", "capacity building", profile.location],
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", title: `${profile.name} | Educator, Trainer & Facilitator`, description: profile.introduction, url: "/", siteName: `${profile.name} Portfolio` },
+  twitter: { card: "summary", title: `${profile.name} | Educator, Trainer & Facilitator`, description: profile.introduction },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -17,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
